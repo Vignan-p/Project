@@ -1,0 +1,55 @@
+<body>
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2>Python Django Pagination Mysql with  Bootstrap 5</h2>  
+              <h4>Employees</h4>  
+            <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for rs_emp in employees %}
+                  <tr>
+                  <td>{{ rs_emp.name }}</td>
+                  <td>{{ rs_emp.contact }}</td>
+                  <td>{{ rs_emp.email }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+           
+          <nav aria-label="...">
+          {% if employees.has_other_pages %}
+            <ul class="pagination">
+              {% if employees.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ employees.previous_page_number }}">Previous</a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="page-link">Previous</span></li>
+              {% endif %}
+     
+              {% for i in employees.paginator.page_range %}
+                {% if employees.number == i %}
+                <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{ i }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+              {% endfor %}
+     
+              {% if employees.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ employees.next_page_number }}">Next</a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="page-link">Next</span></li>
+              {% endif %}
+            </ul>
+          {% endif %}
+          </nav>
+     
+        </div>        
+      </div> 
+    </div> 
+    </body> 
