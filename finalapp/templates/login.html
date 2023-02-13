@@ -15,9 +15,6 @@
             margin-top: 150px;
             border-radius: 20px;
         }
-        body{
-            
-        }
         label{
             color:black;
             font-size: 20px;
@@ -39,9 +36,9 @@
                     <h2 class="text-center">Login</h2>
                     <hr color="black">
                     <label>Username:</label>
-                    <input type="text" placeholder="username" name="username" class="form-control" style="border-radius: 10px;">
+                    <input type="text" placeholder="username" name="username" class="form-control" style="border-radius: 10px;" required>
                     <label>Password:</label>
-                    <input type="password" placeholder="password" name="password" class="form-control" style="border-radius: 10px;">
+                    <input type="password" placeholder="password" name="password" class="form-control" style="border-radius: 10px;" required>
                     <center>
                     <input type="submit" value="Login" class="btn btn-success mt-3 text-white " style="border-radius: 10px; font-weight:600; font-size:18px;">
                     <input type="reset" value="Clear" class="btn bg-danger mt-3 ml-3 text-white" style="border-radius: 10px; font-weight:600;font-size:18px;">
@@ -51,6 +48,8 @@
             </div>
         </div>
     </div>
+
+    <!--restricting the page to redirect previous page-->
     <script type="text/javascript">
         window.history.forward();
         function noBack() {

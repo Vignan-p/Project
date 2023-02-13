@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "formdb",
-        'USER': "root",
-        'PASSWORD':"admin",
-        'HOST':"localhost",
+        'USER': "srikar",
+        'PASSWORD':"Srikar@2001",
+        'HOST':"192.168.30.72",
         'PORT':3306
     }
 }

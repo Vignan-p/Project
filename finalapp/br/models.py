@@ -2,6 +2,8 @@ from django.db import models
 
 # Create your models here.
 
+#creating fields for table
+
 class empdata(models.Model):
     empid=models.IntegerField(primary_key=True)
     empname=models.CharField(max_length=30)

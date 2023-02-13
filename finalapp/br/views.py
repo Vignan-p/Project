@@ -28,12 +28,12 @@ def loginpage(request):
             messages.success(request,'Invalid details!')
             return render(request, 'login.html')
 
-
+#creating logout view 
 def logoutpage(request):
     logout(request)
     return redirect('loginpage') 
 
-def empform(request):
+def empform(request):   # creating view for empform
     if request.method=='GET':
         empdat=empdata.objects.all().values()  #displaying the values that are before saved 
         return render(request,'empform.html',{'empdat':empdat})  
@@ -46,11 +46,12 @@ def empform(request):
             prevexp=request.POST.get('prevexp'),
             designation=request.POST.get('desg')
         ).save()  #saving all the form data in models
-        messages.success(request,'Form Submitted Successfully') #displaying the form submitting message
         empdat=empdata.objects.all().values() #displaying the values  after saving
         return render(request,'empform.html',{'empdat':empdat})
 
-def empdetails(request):
+
+
+def empdetails(request):  #creating view for empdetails
     if request.method=='GET':
         empdat = empdata.objects.all()
         page = request.GET.get('page', 1)  #pagination
